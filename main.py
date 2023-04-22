@@ -4,7 +4,7 @@ from itertools import count
 import os
 from dotenv import load_dotenv
 from download_tools import calculate_mid_salary
-from download_tools import get_salary_statistics
+from download_tools import get_salary_statistic
 from download_tools import reformat
 from download_tools import print_table_vac_statistic
 
@@ -95,7 +95,7 @@ def get_sj_found_amount_average(sj_vacancies):
                 }
                 )
     mid_salaries = calculate_mid_salary(sj_salaries, 'payment_from', 'payment_to')
-    
+
     return amount, len(mid_salaries), int(sum(mid_salaries)) // len(mid_salaries) if len(mid_salaries) else 0
 
 
@@ -110,12 +110,12 @@ def main():
         hh_amount_vacancies, hh_vacancies_processed, hh_average_salary = get_hh_found_amount_average(hh_vacancies)
         sj_amount_vacancies, sj_vacancies_processed, sj_average_salary = get_sj_found_amount_average(sj_vacancies)
 
-        sj_salary_statistics[lang] = get_salary_statistics(
+        sj_salary_statistics[lang] = get_salary_statistic(
             sj_amount_vacancies,
             sj_vacancies_processed,
             sj_average_salary
         )
-        hh_salary_statistics[lang] = get_salary_statistics(
+        hh_salary_statistics[lang] = get_salary_statistic(
             hh_amount_vacancies,
             hh_vacancies_processed,
             hh_average_salary
