@@ -14,15 +14,6 @@ def calculate_mid_salary(from_to_salary, key_salary_from, key_salary_to, ):
     return mid_salaries
 
 
-def get_salary_statistic(amount_vacancies, vacancies_processed, average_salary):
-    salary_statistics = {
-        "vacancies_found": amount_vacancies,
-        "vacancies_processed": vacancies_processed,
-        "average_salary": average_salary
-    }
-    return salary_statistics
-
-
 def reformat(dictionary):
     vacancies = []
     for language, vacancy_content in dictionary.items():
