@@ -4,7 +4,6 @@ from itertools import count
 import os
 from dotenv import load_dotenv
 from download_tools import calculate_mid_salary
-from download_tools import get_salary_statistic
 from download_tools import reformat
 from download_tools import print_table_vac_statistic
 
