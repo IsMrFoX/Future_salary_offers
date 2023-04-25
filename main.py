@@ -121,10 +121,10 @@ def main():
             "average_salary": hh_average_salary
         }
 
-    hh_sj_vacancies = [reformat(hh_salary_statistics), reformat(sj_salary_statistics)]
+    hh_sj_vacancy_statistics = [reformat(hh_salary_statistics), reformat(sj_salary_statistics)]
     titles = ['HeadHunter Moskow', 'SuperJob Moskow']
 
-    for job_statistic, title in zip(hh_sj_vacancies, titles):
+    for job_statistic, title in zip(hh_sj_vacancy_statistics, titles):
         print_table_vac_statistic(job_statistic, title)
 
 
