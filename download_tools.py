@@ -1,4 +1,4 @@
-from operator import *
+from operator import floordiv, add, mul
 from terminaltables import AsciiTable
 
 
