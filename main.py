@@ -110,16 +110,16 @@ def main():
         hh_amount_vacancies, hh_vacancies_processed, hh_average_salary = get_hh_found_amount_average(hh_vacancies)
         sj_amount_vacancies, sj_vacancies_processed, sj_average_salary = get_sj_found_amount_average(sj_vacancies)
 
-        sj_salary_statistics[lang] = get_salary_statistic(
-            sj_amount_vacancies,
-            sj_vacancies_processed,
-            sj_average_salary
-        )
-        hh_salary_statistics[lang] = get_salary_statistic(
-            hh_amount_vacancies,
-            hh_vacancies_processed,
-            hh_average_salary
-        )
+        sj_salary_statistics[lang] = {
+            "vacancies_found": sj_amount_vacancies,
+            "vacancies_processed": sj_vacancies_processed,
+            "average_salary": sj_average_salary
+        }
+        hh_salary_statistics[lang] = {
+            "vacancies_found": hh_amount_vacancies,
+            "vacancies_processed": hh_vacancies_processed,
+            "average_salary": hh_average_salary
+        }
 
     hh_sj_vacancies = [reformat(hh_salary_statistics), reformat(sj_salary_statistics)]
     titles = ['HeadHunter Moskow', 'SuperJob Moskow']
