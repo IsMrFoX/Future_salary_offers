@@ -33,8 +33,8 @@ def get_hh_vacancies(lang):
 
 def get_hh_found_amount_average(all_vacancies):
     from_to_salary = [vacancies_content['salary'] for vacancies in all_vacancies for vacancies_content in vacancies['items']
-                      if items['salary'] and items['salary']['currency'] == 'RUR']
-    amount = vacancies[0]['found']
+                      if vacancies_content['salary'] and vacancies_content['salary']['currency'] == 'RUR']
+    amount = all_vacancies[0]['found']
     mid_salaries = calculate_mid_salary(from_to_salary, 'from', 'to')
 
     return amount, len(mid_salaries), int(sum(mid_salaries)) // len(mid_salaries) \
